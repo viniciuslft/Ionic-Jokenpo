@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Jogo de Jokenpô</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Escolha sua jogada:</h2>
+
+  <ion-buttons>
+    <ion-button (click)="jogar('Pedra')">
+      <i class="fas fa-hand-rock"></i> Pedra
+    </ion-button>
+    <ion-button (click)="jogar('Papel')">
+      <i class="fas fa-hand-paper"></i> Papel
+    </ion-button>
+    <ion-button (click)="jogar('Tesoura')">
+      <i class="fas fa-hand-scissors"></i> Tesoura
+    </ion-button>
+  </ion-buttons>
+
+  <ion-card *ngIf="resultado">
+    <ion-card-header>
+      Resultado
+    </ion-card-header>
+    <ion-card-content>
+      <p>Você jogou: <strong>{{ jogador }}</strong></p>
+      <p>Computador jogou: <strong>{{ computador }}</strong></p>
+      <h3>{{ resultado }}</h3>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Placar</ion-card-header>
+    <ion-card-content>
+      <p>Você: {{ placar.jogador }}</p>
+      <p>Computador: {{ placar.computador }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" [routerLink]="['/home']">
+    Ir para Listagem Geral
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/com-for']">
+    Ir para Exemplo com FOR
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/com-switch']">
+    Ir para Exemplo com SWITCH
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/pares-impares']">
+    Ir para Filtro de Números
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/adivinha']">
+    Ir para Jogo de Adivinhação
+  </ion-button>
+</ion-content>
