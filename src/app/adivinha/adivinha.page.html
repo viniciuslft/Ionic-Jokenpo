@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Jogo de Adivinhação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Escolha um número (1 a 3)</ion-label>
+    <ion-select [(ngModel)]="escolhaUsuario">
+      <ion-select-option value="1">1</ion-select-option>
+      <ion-select-option value="2">2</ion-select-option>
+      <ion-select-option value="3">3</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="jogar()">Jogar</ion-button>
+  <ion-button expand="block" [routerLink]="['/home']">
+    Ir para Listagem Geral
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/com-for']">
+    Ir para Exemplo com FOR
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/com-switch']">
+    Ir para Exemplo com SWITCH
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/pares-impares']">
+    Ir para Filtro de Números
+  </ion-button>
+  <ion-card *ngIf="resultado">
+    <ion-card-content>
+      {{ resultado }}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

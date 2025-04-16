@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exemplo com SWITCH</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Selecione o período</ion-label>
+    <ion-select [(ngModel)]="opcaoSelecionada">
+      <ion-select-option value="manha">Manhã</ion-select-option>
+      <ion-select-option value="tarde">Tarde</ion-select-option>
+      <ion-select-option value="noite">Noite</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="mostrarMensagem()">
+    Mostrar Mensagem
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/pares-impares']">
+    Ir para Filtro de Números
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/home']">
+    Ir para Listagem Geral
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/com-for']">
+    Ir para Exemplo com FOR
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/adivinha']">
+    Ir para Jogo de Adivinhação
+  </ion-button>
+
+  <ion-card *ngIf="mensagem">
+    <ion-card-content>
+      {{ mensagem }}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

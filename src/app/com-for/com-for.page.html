@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exemplo com FOR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="floating">Digite até qual número contar</ion-label>
+    <ion-input type="number" [(ngModel)]="limite"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="gerarNumeros()">
+    Gerar com FOR
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/pares-impares']">
+    Ir para Filtro de Números
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/home']">
+    Ir para Listagem Geral
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/com-switch']">
+    Ir para Exemplo com SWITCH
+  </ion-button>
+  <ion-button expand="block" [routerLink]="['/adivinha']">
+    Ir para Jogo de Adivinhação
+  </ion-button>
+
+  <ion-list *ngIf="numeros.length > 0">
+    <ion-item *ngFor="let numero of numeros">
+      Número: {{ numero }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
