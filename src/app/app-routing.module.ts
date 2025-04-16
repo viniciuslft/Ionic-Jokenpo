@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'adivinha',
     loadChildren: () => import('./adivinha/adivinha.module').then( m => m.AdivinhaPageModule)
+  },  {
+    path: 'jokenpo',
+    loadChildren: () => import('./jokenpo/jokenpo.module').then( m => m.JokenpoPageModule)
   },
+
 ];
 
 @NgModule({
